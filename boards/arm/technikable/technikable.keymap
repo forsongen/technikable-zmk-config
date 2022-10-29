@@ -16,9 +16,8 @@
 // #define TBLE_DUAL_2U true
 
 #define BAS_L 0
-#define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
+#define NUM_L 1
+#define NAV_L 2
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -70,8 +69,8 @@
             >;
         };
 
-        nav_layer {
-            label = "Nav";
+        num_layer {
+            label = "Num";
             bindings = <
 &bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &trans         &trans      &trans     &trans     &kp DEL
 &trans     &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp UARW   &kp RARW   &trans
@@ -86,8 +85,8 @@
             >;
         };
 
-        num_layer {
-            label = "Num";
+        nav_layer {
+            label = "Nav";
             bindings = <
 &trans     &kp LBKT   &kp N7     &kp N8      &kp N9    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &trans
 &trans     &kp MINUS  &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
@@ -98,22 +97,6 @@
                      &trans     &kp N0      &trans           &none            &kp ESC        &kp DEL      &trans
 #else
                      &trans     &kp N0      &trans    &none         &none     &kp ESC        &kp DEL      &trans
-#endif
-            >;
-        };
-
-        sym_layer {
-            label = "Sym";
-            bindings = <
-&trans     &kp LBRC   &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp RBRC     &trans     &trans    &trans       &trans       &trans     &trans
-&trans     &kp COLON  &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp PLUS     &trans     &trans    &trans       &trans       &trans     &trans
-&trans     &kp TILDE  &kp LS(N1) &kp LS(N2)  &kp LS(N3)   &kp LS(BSLH) &trans     &trans    &trans       &trans       &trans     &trans
-#ifdef TBLE_DUAL_2U
-                      &trans     &kp LS(N0)              &trans                    &trans       &trans         &trans
-#elif defined(TBLE_MIT)
-                      &trans     &kp LS(N0)      &trans                &trans             &trans      &trans   &trans
-#else
-                      &trans     &kp LS(N0)      &trans          &trans       &trans    &trans  &trans         &trans
 #endif
             >;
         };
