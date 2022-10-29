@@ -9,13 +9,16 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define COLEMAK_BASE 1
+#define QWERTY_BASE 1
 
 #define TBLE_ORTHO   true
+// #define TBLE_MIT     true
+// #define TBLE_DUAL_2U true
 
-#define BSE_L 0
-#define RSE_L 1
-#define LWR_L 2
+#define BAS_L 0
+#define NAV_L 1
+#define NUM_L 2
+#define SYM_L 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -41,32 +44,6 @@
 	    then-layer = <SYM_L>;
 	};
     };
-    
-   //Currency macros	
-/ {
-    macros {
-        GBP: GBP {
-            label = "GBP";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &kp 0 &kp 1 &kp 6 &kp 3>
-                , <&macro_release &kp RALT>
-                ;
-        };
-		EUR: EUR {
-            label = "EUR";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &kp 0 &kp 1 &kp 2 &kp  8>
-                , <&macro_release &kp RALT>
-                ;
-        };
-    };
-};
 
     keymap {
         compatible = "zmk,keymap";
@@ -143,4 +120,3 @@
 
     };
 };
-
