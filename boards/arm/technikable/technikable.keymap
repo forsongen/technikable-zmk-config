@@ -56,20 +56,20 @@
         base_layer {
             label = "Base";
             bindings = <
-&kp Q      &kp W      &kp F      &kp P      &kp B      &kp LC(Z)   &kp LC(Y)  &kp J      &kp L      &kp U      &kp Y      &kp QUOT
-&kp A      &kp R      &kp S      &kp T      &kp G      &mo NAV_L   &kp RGUI   &kp M      &kp N      &kp E      &kp I      &kp O
-&kp Z      &kp X      &kp C      &kp D      &kp V    &kp K_BACK &kp K_FORWARD &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
-                   &mt LCTRL ESC  &kp LSHFT  &kp RALT   &kp LC(C)   &kp LC(V)  &kp BSPC  &lt NUM_L SPACE  &kp ENTER
+&kp Q      &kp W      &kp F      &kp P      &kp B      &kp LPAR    &kp RPAR   &kp J      &kp L      &kp U      &kp Y      &kp QUOT
+&kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC     &kp DEL    &kp M      &kp N      &kp E      &kp I      &kp O
+&kp Z      &kp X      &kp C      &kp D      &kp V      &kp LC(Z)   &kp LC(Y)  &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
+                &kp LCTRL  &lt NUM_L SPACE  &kp RALT   &kp LC(C)   &kp LC(V)  &mt RGUI BSPC  &kp RSHFT  &lt NAV_L ENTER
             >;
         };
 
         num_layer {
             label = "Num";
             bindings = <
-&trans     &kp HOME   &kp UARW   &kp END    &trans     &trans     &trans     &EUR       &kp N7     &kp N8     &kp N9     &kp EQUAL
-&kp TAB    &kp LARW   &kp DARW   &kp RARW   &kp DEL    &trans     &trans     &GBP       &kp N4     &kp N5     &kp N6     &kp MINUS
-&trans     &trans     &trans     &trans     &trans     &trans     &trans     &kp BSLH   &kp N1     &kp N2     &kp N3     &kp SEMI
-                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &kp N0
+&kp TAB    &kp N7     &kp N8     &kp N9     &trans     &kp LBKT   &kp RBKT   &trans     &kp HOME   &kp UARW   &kp END    &kp EQUAL
+&trans     &kp N4     &kp N5     &kp N6     &trans     &trans     &trans     &trans     &kp LARW   &kp DARW   &kp RARW   &kp MINUS
+&kp SEMI   &kp N1     &kp N2     &kp N3     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &kp BSLH
+                      &kp N0&    trans      &tog NAV_L &trans     &trans     &trans     &trans     &trans
             >;
         };
         
