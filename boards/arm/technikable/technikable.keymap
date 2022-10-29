@@ -9,16 +9,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define QWERTY_BASE 1
+#define COLEMAK_BASE 1
 
 #define TBLE_ORTHO   true
-// #define TBLE_MIT     true
-// #define TBLE_DUAL_2U true
 
-#define BAS_L 0
-#define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
+#define BSE_L 0
+#define RSE_L 1
+#define LWR_L 2
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -28,13 +25,7 @@
 / {
     chosen {
        zmk,matrix_transform =
-#ifdef TBLE_DUAL_2U
-                       &dual_2u_transform;
-#elif defined(TBLE_MIT)
-                       &mit_transform;
-#else
                        &ortho_transform;
-#endif
     };
 
     conditional_layers {
