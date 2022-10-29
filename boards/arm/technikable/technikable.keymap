@@ -41,6 +41,32 @@
 	    then-layer = <SYM_L>;
 	};
     };
+    
+   //Currency macros	
+/ {
+    macros {
+        GBP: GBP {
+            label = "GBP";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp 0 &kp 1 &kp 6 &kp 3>
+                , <&macro_release &kp RALT>
+                ;
+        };
+		EUR: EUR {
+            label = "EUR";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp 0 &kp 1 &kp 2 &kp  8>
+                , <&macro_release &kp RALT>
+                ;
+        };
+    };
+};
 
     keymap {
         compatible = "zmk,keymap";
