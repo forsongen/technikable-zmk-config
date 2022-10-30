@@ -31,9 +31,9 @@
             label = "Base";
             bindings = <
 &kp Q      &kp W      &kp F      &kp P      &kp B      &kp LPAR    &kp RPAR   &kp J      &kp L      &kp U      &kp Y      &kp QUOT
-&kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC   &mt RGUI DEL &kp M      &kp N      &kp E      &kp I      &kp O
-&kp Z      &kp X      &kp C      &kp D      &kp V      &kp LC(Z)   &kp LC(Y)  &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
-                &kp LCTRL  &lt NUM_L SPACE  &kp RALT   &kp LC(C)   &kp LC(V)  &kp BSPC   &kp RSHFT  &lt NAV_L ENTER
+&kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC     &kp DEL    &kp M      &kp N      &kp E      &kp I      &kp O
+&kp Z      &kp X      &kp C      &kp D      &kp V      &kp LG(Z)   &kp LG(Y)  &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
+                &kp LCMD   &lt NUM_L SPACE  &kp RALT   &kp LG(C)   &kp LG(V)  &kp BSPC   &kp RSHFT  &lt NAV_L ENTER
             >;
         };
 
