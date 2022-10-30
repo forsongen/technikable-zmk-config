@@ -31,9 +31,9 @@
             label = "Base";
             bindings = <
 &kp Q      &kp W      &kp F      &kp P      &kp B      &kp LPAR    &kp RPAR   &kp J      &kp L      &kp U      &kp Y      &kp QUOT
-&kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC     &kp DEL    &kp M      &kp N      &kp E      &kp I      &kp O
+&kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC   &mt RGUI DEL &kp M      &kp N      &kp E      &kp I      &kp O
 &kp Z      &kp X      &kp C      &kp D      &kp V      &kp LC(Z)   &kp LC(Y)  &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
-                &kp LCTRL  &lt NUM_L SPACE  &kp RALT   &kp LC(C)   &kp LC(V)  &mt RGUI BSPC  &kp RSHFT  &lt NAV_L ENTER
+                &kp LCTRL  &lt NUM_L SPACE  &kp RALT   &kp LC(C)   &kp LC(V)  &kp BSPC   &kp RSHFT  &lt NAV_L ENTER
             >;
         };
 
@@ -50,9 +50,9 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&trans     &kp F1     &kp F2     &kp F3     &kp F4     &trans     &trans     &trans     &bt BT_CLR &bt BT(0)  &bt BT(1)   &trans
-&trans     &kp F5     &kp F6     &kp F7     &kp F8     &trans     &trans     &trans     &bt BT(2)  &bt BT(3)  &bt BT(4)   &trans
-&trans     &kp F9     &kp F10    &kp F11    &kp F12    &trans     &trans     &trans     &trans     &trans     &trans      &trans
+&kp F1     &kp F2     &kp F3     &kp F4     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+&kp F5     &kp F6     &kp F7     &kp F8     &trans     &trans     &trans     &trans     &bt BT(0)  &bt BT(1)  &bt BT(2)  &trans
+&kp F9     &kp F10    &kp F11    &kp F12    &trans     &trans     &trans     &trans     &bt BT(3)  &bt BT(4)  &bt BT_CLR &trans
                       &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
