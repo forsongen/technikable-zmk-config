@@ -62,19 +62,19 @@ macros {
         base_layer {
             label = "Base";
             bindings = <
-&kp Q      &kp W      &kp F      &kp P      &kp B      &kp LPAR   &kp RPAR   &kp J      &kp L      &kp U      &kp Y      &kp QUOT
+&kp Q      &kp W      &kp F      &kp P      &kp B      &kp LG(Z)  &kp LS(LG(Z))  &kp J      &kp L      &kp U      &kp Y      &kp QUOT
 &kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC    &kp DEL    &kp M      &kp N      &kp E      &kp I      &kp O
-&kp Z      &kp X      &kp C      &kp D      &kp V      &kp LG(Z)  &kp LS(LG(Z))  &kp K  &kp H      &kp COMMA  &kp DOT    &kp FSLH
-                &kp LCMD   &lt NUM_L SPACE  &kp RALT   &kp LG(C)  &kp LG(V)  &kp BSPC   &lt SYM_L SPACE  &mt RSHFT ENTER
+&kp Z      &kp X      &kp C      &kp D      &kp V      &kp LG(C)  &kp LG(V)  &kp K  &kp H      &kp COMMA  &kp DOT    &kp FSLH
+                &kp LCMD   &lt NUM_L SPACE  &kp RALT   &kp TAB    &kp LCTRL  &kp BSPC   &lt SYM_L SPACE  &mt RSHFT ENTER
             >;
         };
 
         num_layer {
             label = "Num";
             bindings = <
-&kp TAB    &kp N7     &kp N8     &kp N9     &kp N0     &kp LBKT   &kp RBKT   &trans     &kp N7     &kp N8     &kp N9     &trans
+&kp TAB    &kp N7     &kp N8     &kp N9     &kp N0     &trans     &trans     &trans     &kp N7     &kp N8     &kp N9     &trans
 &trans     &kp N4     &kp N5     &kp N6     &kp N0     &trans     &trans     &trans     &kp N4     &kp N5     &kp N6     &trans
-&trans     &kp N1     &kp N2     &kp N3     &kp N0     &trans     &trans     &trans     &kp N1     &kp N2     &kp N3     &trans
+&trans     &kp N1     &kp N2     &kp N3     &kp N0     &trans     &trans     &kp LBKT   &kp N1     &kp N2     &kp N3     &kp RBKT
                       &trans     &trans     &trans     &trans     &trans     &trans     &kp N0     &trans
             >;
         };
@@ -82,9 +82,9 @@ macros {
         sym_layer {
             label = "Sym";
             bindings = <
-&kp TAB    &kp HOME   &kp UP     &kp END    &kp PG_UP  &kp LPAR   &kp RPAR   &hash      &kp AMPS   &kp STAR   &kp PLUS   &kp EQUAL
+&kp TAB    &kp HOME   &kp UP     &kp END    &kp PG_UP  &kp LPAR   &kp RPAR   &kp BSLH   &kp AMPS   &kp STAR   &kp PLUS   &kp EQUAL
 &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN  &trans     &trans     &kp UNDER  &kp DLLR   &kp PRCNT  &kp CARET  &kp MINUS
-&kp SEMI   &kp COLON  &kp LS(NUBS)  &trans  &trans     &trans     &trans     &euro      &kp EXCL   &kp AT     &kp POUND  &kp BSLH
+&kp SEMI   &kp COLON  &kp LS(NUBS)  &hash   &euro      &trans     &trans     &kp LPAR   &kp EXCL   &kp AT     &kp POUND  &kp RPAR
                       &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
