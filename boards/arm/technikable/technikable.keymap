@@ -50,26 +50,6 @@ macros {
 		, <&macro_release &kp RALT>
                 ;
         };
-	testmacro1: testmacro1 {
-            label = "test_macro1";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp A>
-		, <&macro_release &kp LSHFT>
-                ;
-        };
-	testmacro2: testmacro2 {
-            label = "test_macro2";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp KP_A>
-		, <&macro_release &kp LSHFT>
-                ;
-        };
     };
     
     conditional_layers {
@@ -99,7 +79,7 @@ macros {
 &kp TAB    &kp N7     &kp N8     &kp N9     &kp N0     &kp LBKT   &kp RBKT   &trans     &kp N7     &kp N8     &kp N9     &trans
 &trans     &kp N4     &kp N5     &kp N6     &kp N0     &trans     &trans     &trans     &kp N4     &kp N5     &kp N6     &trans
 &trans     &kp N1     &kp N2     &kp N3     &kp N0     &trans     &trans     &trans     &kp N1     &kp N2     &kp N3     &trans
-                      &trans     &trans     &trans     &testmacro1     &testmacro2     &trans     &kp N0     &trans
+                      &trans     &trans     &trans     &trans     &trans     &trans     &kp N0     &trans
             >;
         };
         
@@ -109,7 +89,7 @@ macros {
 &kp TAB    &kp HOME   &kp UP     &kp END    &kp PG_UP  &kp LPAR   &kp RPAR   &hash      &kp AMPS   &kp STAR   &kp PLUS   &kp EQUAL
 &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN  &trans     &trans     &kp UNDER  &kp DLLR   &kp PRCNT  &kp CARET  &kp MINUS
 &kp SEMI   &kp COLON  &trans     &trans     &trans     &trans     &trans     &euro      &kp EXCL   &kp AT     &kp POUND  &kp BSLH
-                      &trans     &trans     &trans     &testmacro1     &testmacro2     &trans     &trans     &trans
+                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
 
