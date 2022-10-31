@@ -25,7 +25,22 @@
 
 / {
 
-conditional_layers {
+macros {
+        hash: hash {
+            label = "hashsymbol";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+		, <&macro_press &kp RALT>
+                , <&macro_tap &kp 2>
+                , <&macro_release &kp LCTRL>
+		, <&macro_release &kp RALT>
+                ;
+        };
+    };
+    
+    conditional_layers {
         compatible = "zmk,conditional-layers";
 	tri_layer {
 	    if-layers = <SYM_L NUM_L>;
