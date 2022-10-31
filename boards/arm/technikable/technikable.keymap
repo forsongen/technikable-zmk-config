@@ -84,7 +84,7 @@ macros {
             bindings = <
 &kp TAB    &kp HOME   &kp UP     &kp END    &kp PG_UP  &kp LPAR   &kp RPAR   &hash      &kp AMPS   &kp STAR   &kp PLUS   &kp EQUAL
 &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN  &trans     &trans     &kp UNDER  &kp DLLR   &kp PRCNT  &kp CARET  &kp MINUS
-&kp SEMI   &kp COLON  &trans     &trans     &trans     &trans     &trans     &euro      &kp EXCL   &kp AT     &kp POUND  &kp BSLH
+&kp SEMI   &kp COLON  &kp LS(NUBS)  &trans  &trans     &trans     &trans     &euro      &kp EXCL   &kp AT     &kp POUND  &kp BSLH
                       &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
