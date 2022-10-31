@@ -69,7 +69,7 @@ macros {
 &kp Q      &kp W      &kp F      &kp P      &kp B      &kp LPAR   &kp RPAR   &kp J      &kp L      &kp U      &kp Y      &kp QUOT
 &kp A      &kp R      &kp S      &kp T      &kp G      &kp ESC    &kp DEL    &kp M      &kp N      &kp E      &kp I      &kp O
 &kp Z      &kp X      &kp C      &kp D      &kp V      &kp LG(Z)  &kp LS(LG(Z))  &kp K  &kp H      &kp COMMA  &kp DOT    &kp FSLH
-                &kp LCMD   &lt NUM_L SPACE  &kp RALT   &kp LG(C)  &kp LG(V)  &kp BSPC   &lt NAV_L SPACE  &mt RSHFT ENTER
+                &kp LCMD   &lt NUM_L SPACE  &kp RALT   &kp LG(C)  &kp LG(V)  &kp BSPC   &lt SYM_L SPACE  &mt RSHFT ENTER
             >;
         };
 
