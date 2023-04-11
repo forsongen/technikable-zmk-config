@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: forsongen
+      url-base: https://github.com/forsongen
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: forsongen
+      revision: technikable
       import: app/west.yml
   self:
     path: config
