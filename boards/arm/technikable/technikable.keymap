@@ -24,6 +24,25 @@
 / {
 
  behaviors {
+      	ht: hold_tap {
+       		compatible = "zmk,behavior-hold-tap";
+		label = "hold_tap";
+          	#binding-cells = <2>;
+            	flavor = "hold-preferred";
+            	tapping-term-ms = <200>;
+            	quick-tap-ms = <150>;
+            	bindings = <&kp>, <&kp>;
+	};
+	hm: homerow_mods {
+            	compatible = "zmk,behavior-hold-tap";
+            	label = "HOMEROW_MODS";
+           	#binding-cells = <2>;
+        	tapping-term-ms = <150>;
+       		quick-tap-ms = <150>;
+     		flavor = "tap-preferred";
+            	bindings = <&kp>, <&kp>;
+		retro-tap;
+	};
 	swap: swapper {
             	compatible = "zmk,behavior-tri-state";
             	label = "SWAPPER";
@@ -44,7 +63,7 @@
 &kp A        &kp R        &kp S        &kp T        &kp G        &none        &none        &kp M        &kp N        &kp E        &kp I        &kp O
 &kp Z        &kp X        &kp C        &kp D        &kp V        &none        &none        &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
 // thumb row
-                       &kp RALT  &mt LCMD ESC  &lt NAVNUM SPACE  &kp TAB      &kp BSPC  &lt SYMBOL SPACE  &mt LSHFT ENTER  &kp LCTRL
+                &mt LCMD ESC  &mt LSHFT SPACE  &lt NAVNUM TAB    &none        &none    &lt SYMBOL BSPC  &hm RALT SPACE  &hm RGUI ENTER
             >;
         };
 
@@ -55,7 +74,7 @@
 &sk LALT     &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &none        &none        &trans       &kp N4       &kp N5       &kp N6       &trans
 &trans       &trans       &trans       &kp BSPC     &kp DEL      &none        &none        &trans       &kp N1       &kp N2       &kp N3       &trans
 // thumb row
-                          &none        &trans       &trans       &trans       &trans       &mo FUNC     &kp N0       &none
+                          &trans       &trans       &trans       &none        &none        &mo FUNC     &kp N0       &trans
             >;
         };
 
@@ -66,7 +85,7 @@
 &kp LT       &kp GT       &kp LPAR     &kp RPAR     &trans       &none        &none        &kp UNDER    &kp DLLR     &kp PRCNT    &kp CARET    &kp MINUS
 &kp SEMI     &kp COLON    &kp LBRC     &kp RBRC     &trans       &none        &none        &kp LS(NUBS) &kp EXCL     &kp AT       &kp HASH     &kp BSLH
 // thumb row
-                          &none        &trans      &mo FUNC      &trans       &trans       &trans       &caps_word   &none
+                          &trans       &trans      &mo FUNC      &none        &none        &trans       &caps_word   &trans
             >;
         };
 
@@ -77,7 +96,7 @@
 &kp F5       &kp F6       &kp F7       &kp F8       &none        &none        &none        &trans       &bt BT(3)    &bt BT(4)    &trans       &trans
 &kp F9       &kp F10      &kp F11      &kp F12      &none        &none        &none        &trans       &bt BT(0)    &bt BT(1)    &bt BT(2)    &trans
 // thumb row
-                          &none    &kp LG(LA(ESC))  &trans       &trans       &trans       &trans       &trans       &none
+                          &trans   &kp LG(LA(ESC))  &trans       &none        &none        &trans       &trans       &trans
             >;
         };
 
