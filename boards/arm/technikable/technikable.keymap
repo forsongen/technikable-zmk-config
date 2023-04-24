@@ -61,9 +61,9 @@
 
 &kp Q        &kp W        &kp F        &kp P        &kp B        &none        &none        &kp J        &kp L        &kp U        &kp Y        &kp QUOT
 &kp A        &kp R        &kp S        &kp T        &kp G        &none        &none        &kp M        &kp N        &kp E        &kp I        &kp O
-&kp Z        &kp X        &kp C        &kp D        &kp V        &none        &none        &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
+&hm LGUI Z   &hm LALT X   &kp C        &kp D        &kp V        &none        &none        &kp K        &kp H        &kp COMMA    &hm RALT DOT &hm RGUI FSLH
 // thumb row
-                &mt LCMD ESC  &mt LSHFT SPACE  &lt NAVNUM TAB    &none        &none    &lt SYMBOL BSPC  &hm RALT SPACE  &hm RGUI ENTER
+                   &mt LCTRL ESC  &lt NAVNUM SPACE  &kp TAB      &none        &none      &kp BSPC  &lt SYMBOL SPACE  &mt LSHFT ENTER
             >;
         };
 
@@ -74,7 +74,7 @@
 &sk LALT     &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &none        &none        &trans       &kp N4       &kp N5       &kp N6       &trans
 &trans       &trans       &trans       &kp BSPC     &kp DEL      &none        &none        &trans       &kp N1       &kp N2       &kp N3       &trans
 // thumb row
-                          &trans       &trans       &trans       &none        &none        &mo FUNC     &kp N0       &trans
+                          &trans       &trans       &trans       &none        &none        &trans       &mo FUNC     &kp N0
             >;
         };
 
@@ -85,7 +85,7 @@
 &kp LT       &kp GT       &kp LPAR     &kp RPAR     &trans       &none        &none        &kp UNDER    &kp DLLR     &kp PRCNT    &kp CARET    &kp MINUS
 &kp SEMI     &kp COLON    &kp LBRC     &kp RBRC     &trans       &none        &none        &kp LS(NUBS) &kp EXCL     &kp AT       &kp HASH     &kp BSLH
 // thumb row
-                          &trans       &trans      &mo FUNC      &none        &none        &trans       &caps_word   &trans
+                          &trans       &mo FUNC     &trans       &none        &none        &trans       &trans       &caps_word
             >;
         };
 
@@ -96,7 +96,7 @@
 &kp F5       &kp F6       &kp F7       &kp F8       &none        &none        &none        &trans       &bt BT(3)    &bt BT(4)    &trans       &trans
 &kp F9       &kp F10      &kp F11      &kp F12      &none        &none        &none        &trans       &bt BT(0)    &bt BT(1)    &bt BT(2)    &trans
 // thumb row
-                          &trans   &kp LG(LA(ESC))  &trans       &none        &none        &trans       &trans       &trans
+                          &kp LG(LA(ESC))  &trans   &trans       &none        &none        &trans       &trans       &trans
             >;
         };
 
