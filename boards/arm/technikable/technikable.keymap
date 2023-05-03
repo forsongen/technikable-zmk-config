@@ -61,9 +61,9 @@
 
 &kp Q        &kp W        &kp F        &kp P        &kp B        &none        &none        &kp J        &kp L        &kp U        &kp Y        &kp QUOT
 &kp A        &kp R        &kp S        &kp T        &kp G        &none        &none        &kp M        &kp N        &kp E        &kp I        &kp O
-&hm LGUI Z   &hm LALT X   &kp C        &kp D        &kp V        &none        &none        &kp K        &kp H        &kp COMMA    &hm RALT DOT &hm RGUI FSLH
+&hm LCTRL Z   &hm LALT X   &kp C        &kp D        &kp V        &none        &none        &kp K        &kp H        &kp COMMA    &hm RALT DOT &hm RCTRL FSLH
 // thumb row
-                   &mt LCTRL ESC  &lt NAVNUM SPACE  &kp TAB      &none        &none      &kp BSPC  &lt SYMBOL SPACE  &mt LSHFT ENTER
+                   &mt LCMD ESC  &lt NAVNUM SPACE  &kp TAB      &none        &none      &kp BSPC  &lt SYMBOL SPACE  &mt LSHFT ENTER
             >;
         };
 
