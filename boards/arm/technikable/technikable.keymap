@@ -3,6 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
+ 
+ /* PREAMBLE */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -11,92 +13,122 @@
 
 #define TBLE_ORTHO   true
 
-#define COLEMAK  0
-#define NAVNUM   1
+#define BASE  0
+#define NUMBER   1
 #define SYMBOL   2
-#define FUNC	 3
+#define FUNCTION	 3
 
+ /* ALIASES */
+
+#define	XXX	&none
+#define	___	&trans
+#define	PRINT	&kp LG(LS(S))
+#define	TAG	&kp RA(N3)
+#define	XIV	&kp LS(F2)
+#define	CAD	&kp LC(LA(DEL))
+#define BT(n)	BT_SEL n
+
+ /* BEHAVIOURS */
+ 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick_tap_ms = <200>; };
-
-#define BT(n) BT_SEL n
+&lt {
+    quick_tap_ms = <200>;
+};
 
 / {
-
- behaviors {
-      	ht: hold_tap {
-       		compatible = "zmk,behavior-hold-tap";
-		label = "hold_tap";
-          	#binding-cells = <2>;
-            	flavor = "hold-preferred";
-            	tapping-term-ms = <200>;
-            	quick-tap-ms = <150>;
-            	bindings = <&kp>, <&kp>;
-	};
-	hm: homerow_mods {
-            	compatible = "zmk,behavior-hold-tap";
-            	label = "HOMEROW_MODS";
-           	#binding-cells = <2>;
-        	tapping-term-ms = <150>;
-       		quick-tap-ms = <150>;
-     		flavor = "tap-preferred";
-            	bindings = <&kp>, <&kp>;
-		retro-tap;
-	};
-	swap: swapper {
-            	compatible = "zmk,behavior-tri-state";
-            	label = "SWAPPER";
-            	#binding-cells = <0>;
-            	bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
-            	ignored-key-positions = <1>;
+ 	behaviors {
+	
+     		ht: hold_tap {
+       			compatible = "zmk,behavior-hold-tap";
+			label = "hold_tap";
+          		#binding-cells = <2>;
+            		flavor = "hold-preferred";
+            		tapping-term-ms = <200>;
+            		quick-tap-ms = <150>;
+            		bindings = <&kp>, <&kp>;
+		};
+		
+		hm: homerow_mods {
+            		compatible = "zmk,behavior-hold-tap";
+            		label = "HOMEROW_MODS";
+            		#binding-cells = <2>;
+            		tapping-term-ms = <200>;
+            		quick-tap-ms = <199>;
+            		flavor = "tap-preferred";
+            		bindings = <&kp>, <&kp>;
+			retro-tap;
+		};
+		
+		swap: swapper {
+            		compatible = "zmk,behavior-tri-state";
+            		label = "SWAPPER";
+            		#binding-cells = <0>;
+            		bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
+            		ignored-key-positions = <1>;
+        	};
         };
-    };
+    
+ /* KEYMAP */
 
  keymap {
         compatible = "zmk,keymap";
 
         base_layer {
-            label = "Base";
+            label = "BASE";
             bindings = <
-
-&kp Q        &kp W        &kp F        &kp P        &kp B        &none        &none        &kp J        &kp L        &kp U        &kp Y        &kp QUOT
-&kp A        &kp R        &kp S        &kp T        &kp G        &none        &none        &kp M        &kp N        &kp E        &kp I        &kp O
-&hm LCTRL Z   &hm LALT X   &kp C        &kp D        &kp V        &none        &none        &kp K        &kp H        &kp COMMA    &hm RALT DOT &hm RCTRL FSLH
-// thumb row
-                   &mt LCMD ESC  &lt NAVNUM SPACE  &kp TAB      &none        &none      &kp BSPC  &lt SYMBOL SPACE  &mt LSHFT ENTER
+// ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
+     &kp Q          &kp W          &kp F          &kp P          &kp B            XXX            XXX              &kp J          &kp L          &kp U          &kp Y          &kp QUOT 
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
+     &kp A          &kp R          &kp S          &kp T          &kp G            XXX            XXX              &kp M          &kp N          &kp E          &kp I          &kp O
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+     &hm LALT Z     &kp X          &kp C          &kp D          &kp V            XXX            XXX              &kp K          &kp H          &kp COMMA      &kp DOT        &hm RALT FSLH
+// ╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                   &mt LCTRL ESC  &lt NUMBER SPACE  &mt LSHFT ENTER  XXX         XXX              &hm LSHFT BSPC  &lt SYMBOL SPACE  &kp LGUI
+//		                 ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
-        navnum_layer {
-            label = "NavNum";
+        number_layer {
+            label = "NUMBER";
             bindings = <
-&swap        &kp HOME     &kp UP       &kp END      &kp PG_UP    &none        &none        &trans       &kp N7       &kp N8       &kp N9       &trans
-&sk LALT     &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &none        &none        &trans       &kp N4       &kp N5       &kp N6       &trans
-&trans       &trans       &trans       &kp BSPC     &kp DEL      &none        &none        &trans       &kp N1       &kp N2       &kp N3       &trans
-// thumb row
-                          &trans       &trans       &trans       &none        &none        &trans       &mo FUNC     &kp N0
+// ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
+     &swap          &kp HOME       XXX            &kp END        XIV              XXX            XXX              XXX            &kp N7         &kp N8         &kp N9         XXX 
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
+     XXX            &kp LEFT       &kp UP         &kp RIGHT      &kp TAB          XXX            XXX              XXX            &kp N4         &kp N5         &kp N6         XXX
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+     &caps_word     XXX            &kp DOWN       &kp BSPC       &kp DEL          XXX            XXX              XXX            &kp N1         &kp N2         &kp N3         PRINT
+// ╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                   ___            ___            ___              XXX            XXX              &kp BSPC       &mo FUNCTION   &kp N0
+//		                 ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         symbol_layer {
-            label = "Symbol";
+            label = "SYMBOL";
             bindings = <
-&trans       &trans       &kp LBKT     &kp RBKT     &trans       &none        &none        &kp PIPE     &kp AMPS     &kp ASTRK    &kp RA(N3)   &kp EQUAL
-&kp LT       &kp GT       &kp LPAR     &kp RPAR     &trans       &none        &none        &kp UNDER    &kp DLLR     &kp PRCNT    &kp CARET    &kp MINUS
-&kp SEMI     &kp COLON    &kp LBRC     &kp RBRC     &trans       &none        &none        &kp LS(NUBS) &kp EXCL     &kp AT       &kp HASH     &kp BSLH
-// thumb row
-                          &trans       &mo FUNC     &trans       &none        &none        &trans       &trans       &caps_word
+// ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
+     ___            ___            &kp LBKT       &kp RBKT       ___              XXX            XXX              &kp PIPE       &kp AMPS       &kp ASTRK      TAG            &kp EQUAL
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
+     ___            ___            &kp LPAR       &kp RPAR       ___              XXX            XXX              &kp UNDER      &kp DLLR       &kp PRCNT      &kp CARET      &kp MINUS
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+     &kp SEMI       &kp COLON      &kp LBRC       &kp RBRC       ___              XXX            XXX              &kp LS(NUBS)   &kp EXCL       &kp AT         &kp HASH       &kp BSLH
+// ╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                   ___            &mo FUNCTION   ___              XXX            XXX              ___            ___            ___
+//		                 ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         function_layer {
-            label = "Function";
-            bindings = <
-&kp F1       &kp F2       &kp F3       &kp F4       &sys_reset   &none        &none        &sys_reset   &trans       &trans       &trans       &bt BT_CLR
-&kp F5       &kp F6       &kp F7       &kp F8       &none        &none        &none        &trans       &bt BT(3)    &bt BT(4)    &trans       &trans
-&kp F9       &kp F10      &kp F11      &kp F12      &none        &none        &none        &trans       &bt BT(0)    &bt BT(1)    &bt BT(2)    &trans
-// thumb row
-                          &kp LG(LA(ESC))  &trans   &trans       &none        &none        &trans       &trans       &trans
+            label = "FUNCTION";
+// ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
+     &kp F1         &kp F2         &kp F3         &kp F4         &sys_reset       XXX            XXX              &sys_reset     XXX            XXX            XXX            &bt BT_CLR
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
+     &kp F5         &kp F6         &kp F7         &kp F8         XXX              XXX            XXX              XXX            &bt BT(3)      &bt BT(4)      XXX            XXX
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+     &kp F9         &kp F10        &kp F11        &kp F12        XXX              XXX            XXX              XXX            &bt BT(0)      &bt BT(1)      &bt BT(2)      XXX
+// ╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                   XXX            XXX            XXX              XXX            XXX              XXX            XXX            XXX
+//		                 ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
