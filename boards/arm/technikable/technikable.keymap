@@ -13,10 +13,10 @@
 
 #define TBLE_ORTHO   true
 
-#define BASE  0
+#define BASE 	 0
 #define NUMBER   1
 #define SYMBOL   2
-#define FUNCTION	 3
+#define FUNCTION 3
 
  /* ALIASES */
 
@@ -63,7 +63,7 @@
             		compatible = "zmk,behavior-tri-state";
             		label = "SWAPPER";
             		#binding-cells = <0>;
-            		bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
+            		bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
             		ignored-key-positions = <1>;
         	};
         };
@@ -120,6 +120,7 @@
 
         function_layer {
             label = "FUNCTION";
+	    bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
      &kp F1         &kp F2         &kp F3         &kp F4         &sys_reset       XXX            XXX              &sys_reset     XXX            XXX            XXX            &bt BT_CLR
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
