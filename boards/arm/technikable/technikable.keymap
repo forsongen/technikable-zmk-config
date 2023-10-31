@@ -9,48 +9,52 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-behaviors 
-{
-    td0: tap_dance_0 
+/ {
+
+    behaviors 
     {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_0";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp KP_ASTERISK>, <&kp KP_ASTERISK>, <&bt BT_SEL 0>;
+        td0: tap_dance_0 
+        {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_ASTERISK>, <&kp KP_ASTERISK>, <&bt BT_SEL 0>;
+        };
+
+        td1: tap_dance_1 
+        {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_SLASH>, <&kp KP_SLASH>, <&bt BT_SEL 1>;
+        };
+
+        td2: tap_dance_2 
+        {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_EQUAL>, <&kp KP_EQUAL>, <&bt BT_CLR>;
+        };
     };
 
-    td1: tap_dance_1 
+    keymap 
     {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_1";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp KP_SLASH>, <&kp KP_SLASH>, <&bt BT_SEL 1>;
-    };
+        compatible = "zmk,keymap";
 
-    td2: tap_dance_2 
-    {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_2";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp KP_EQUAL>, <&kp KP_EQUAL>, <&bt BT_CLR>;
-    };
-};
+        base_layer 
+        {
+            label = "Base";
+            bindings = <
+ &kp END  &kp HOME  &kp RGUI  &kp LALT   &kp ENTER  &kp RCTRL  &kp E      &kp Q  &kp P         &kp H        &td2  &kp C_MUTE
+ &kp DEL  &kp BSPC  &kp Z     &kp M      &kp C      &kp I      &kp LSHFT  &kp R  &kp O         &kp G        &td1  &kp C_VOL_DOWN
+ &kp TAB  &kp ESC   &kp Y     &kp RIGHT  &kp DOWN   &kp LEFT   &kp J      &kp S  &kp N         &kp F        &td0  &kp C_VOL_UP
+                    &kp X     &kp W      &kp UP     &kp V      &kp U      &kp T  &kp KP_MINUS  &kp KP_PLUS  
 
-keymap 
-{
-    compatible = "zmk,keymap";
-
-    base_layer 
-    {
-        label = "Base";
-        bindings = <
- &kp END  &kp HOME  &kp RGUI  &kp LALT   &kp ENTER  &kp RCTRL  &kp E         &kp H        &kp U  &kp Q  &td2  &kp C_MUTE
- &kp DEL  &kp BSPC  &kp Z     &kp M      &kp C      &kp I      &kp LSHFT     &kp G        &kp T  &kp P  &td1  &kp C_VOL_DOWN
- &kp TAB  &kp ESC   &kp Y     &kp RIGHT  &kp DOWN   &kp LEFT   &kp J         &kp F        &kp S  &kp O  &td0  &kp C_VOL_UP
-                    &kp X     &kp W      &kp UP     &kp V      &kp KP_MINUS  &kp KP_PLUS  &kp R  &kp N
-        >;
+            >;
+        };
     };
 };
