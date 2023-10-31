@@ -49,10 +49,10 @@
         {
             label = "Base";
             bindings = <
- &kp END  &kp HOME  &kp RGUI  &kp LALT   &kp ENTER  &kp RCTRL  &kp E      &kp Q  &kp P         &kp H        &td2  &kp C_MUTE
- &kp DEL  &kp BSPC  &kp Z     &kp M      &kp C      &kp I      &kp LSHFT  &kp R  &kp O         &kp G        &td1  &kp C_VOL_DN
- &kp TAB  &kp ESC   &kp Y     &kp RIGHT  &kp DOWN   &kp LEFT   &kp J      &kp S  &kp N         &kp F        &td0  &kp C_VOL_UP
-                    &kp X     &kp W      &kp UP     &kp V      &kp U      &kp T  &kp KP_MINUS  &kp KP_PLUS  
+ &kp LSHFT  &kp SPACE  &kp RGUI      &kp LALT     &kp ENTER  &kp Z     &kp E  &kp R  &kp P      &kp H      &td2  &kp C_MUTE
+ &kp DEL    &kp BSPC   &kp Y         &kp M        &kp C      &kp I     &kp Q  &kp S  &kp O      &kp G      &td1  &kp C_VOL_DN
+ &kp TAB    &kp ESC    &kp X         &kp RIGHT    &kp DOWN   &kp LEFT  &kp J  &kp T  &kp N      &kp F      &td0  &kp C_VOL_UP
+                       &kp KP_MINUS  &kp KP_PLUS  &kp UP     &kp W     &kp V  &kp U  &kp SPACE  &kp RCTRL
 
             >;
         };
